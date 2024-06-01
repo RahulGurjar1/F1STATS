@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-
+import {OurRoutes} from './routes';
 function App() {
   const [backendData, setBackendData] = useState([{}]);
 
@@ -12,15 +12,16 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Hello World2</h1>
-      {(typeof backendData.users === 'undefined') ? (
-        <p>Loading...</p> ) : (
-          backendData.users.map((user, index) => (
-            <p key={index}>{user}</p>
-          )))
-      }
-    </div>
+    // <div>
+    //   <h1>Hello World2</h1>
+    //   {(typeof backendData.users === 'undefined') ? (
+    //     <p>Loading...</p> ) : (
+    //       backendData.users.map((user, index) => (
+    //         <p key={index}>{user}</p>
+    //       )))
+    //   }
+    // </div>
+    <OurRoutes />
   );
 }
 
