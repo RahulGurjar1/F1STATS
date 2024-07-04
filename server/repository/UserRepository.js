@@ -1,21 +1,33 @@
 const mongoose = require("mongoose");
 
-class UserRepository{
-    constructor(){
-
-    }
-    save(user,cb){
-        user.save(function(mayHaveError){
-            cb(mayHaveError);
-        });
+class UserRepository {
+    constructor() {
+        this.User = mongoose.model("User");
     }
 
-    userById(id,cb){
-        mongoose.model("User").findById(id,cb);
+    async save(user) {
+        try {
+            return await user.save();
+        } catch (error) {
+            throw error;
+        }
     }
 
-    userByEmail(email,cb){
-        mongoose.model("User").findOne({email:email},cb);
+    async userById(id) {
+        try {
+            return await this.User.findById(id);
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async userByEmail(email) {
+        try {
+            return await this.User.findOne({ email });
+        } catch (error) {
+            throw error;
+        }
     }
 }
+
 module.exports = UserRepository;
