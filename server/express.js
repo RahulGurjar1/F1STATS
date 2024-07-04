@@ -10,7 +10,7 @@ consign().include("./routes").into(app);
 //404
 app.use(function(req, res, next) {
     let err= new Error("Not Found");
-    err.stauts(404);
+    err.status = 404;
     next(err);
 });
 
