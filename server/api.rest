@@ -1,0 +1,27 @@
+GET http://localhost:3000/sda
+
+
+####
+//AUTH EXAMPLE
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin123456"
+}
+
+####
+//Sign Up example
+POST http://localhost:3000/signup
+Content-Type: application/json
+    
+    {
+        "username": "admin admin",
+        "email": "admin@gmail.com",
+        "password": "admin123456"
+    }  
+
+####
+GET http://localhost:3000/me
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4NmMzYTNlYmVhZjMxMzBmNzQ1MDM1In0sImlhdCI6MTcyMDEwODY5MSwiZXhwIjoxNzIwMTEyMjkxfQ.aXonK9UJdi12fa-xNW2hwYjJGAN94G_ofWTPVwo3Z7c
